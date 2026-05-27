@@ -1,0 +1,2 @@
+cd .\GamesInfoSys\
+dotnet run

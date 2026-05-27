@@ -25,8 +25,10 @@ public sealed record GameDetails(
     IReadOnlyList<string> Platforms,
     IReadOnlyList<string> Developers,
     IReadOnlyList<string> Publishers,
-    IReadOnlyList<string> Tags
+    IReadOnlyList<string> Tags,
+    IReadOnlyList<ExternalStoreLink> ExternalStores
 );
 
 public sealed record GameScreenshot(string? Image);
 
+public sealed record ExternalStoreLink(string Store, string Url);

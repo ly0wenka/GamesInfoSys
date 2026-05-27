@@ -165,7 +165,12 @@ public sealed class RawgClient
             (raw.Platforms ?? []).Select(p => p.Platform?.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Cast<string>().Distinct().ToList(),
             (raw.Developers ?? []).Select(d => d.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Distinct().ToList(),
             (raw.Publishers ?? []).Select(p => p.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Distinct().ToList(),
-            (raw.Tags ?? []).Select(t => t.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Distinct().ToList()
+            (raw.Tags ?? []).Select(t => t.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Distinct().ToList(),
+            (raw.Stores ?? [])
+                .Select(s => new ExternalStoreLink(s.Store?.Name ?? "", s.Url ?? ""))
+                .Where(x => !string.IsNullOrWhiteSpace(x.Store) && !string.IsNullOrWhiteSpace(x.Url))
+                .Distinct()
+                .ToList()
         );
     }
 
@@ -211,6 +216,7 @@ public sealed class RawgClient
             "Demo mode: set Rawg:ApiKey in appsettings.json or via environment variable RAWG__APIKEY to fetch live data.",
             game.Genres,
             game.Platforms,
+            [],
             [],
             [],
             []
@@ -293,6 +299,14 @@ public sealed class RawgClient
         public List<RawgName>? Developers { get; set; }
         public List<RawgName>? Publishers { get; set; }
         public List<RawgName>? Tags { get; set; }
+
+        public List<RawgStoreLink>? Stores { get; set; }
+    }
+
+    private sealed class RawgStoreLink
+    {
+        public RawgName? Store { get; set; }
+        public string? Url { get; set; }
     }
 
     private sealed class RawgScreenshot
@@ -312,4 +326,3 @@ public sealed class RawgClient
         public List<string>? Platforms { get; set; }
     }
 }
-

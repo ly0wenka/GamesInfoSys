@@ -50,6 +50,80 @@ else
         <div class="col-12 col-lg-8">
             <div class="card mb-3">
                 <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+                        <div>
+                            <h2 class="h5 mb-1">Prices (Region: UA, Switch: ZA)</h2>
+                            <div class="text-body-secondary small">Official stores only (current MVP). Add identifiers to enable more platforms.</div>
+                        </div>
+                        <a class="btn btn-sm btn-outline-secondary" asp-page="/Games/Index">Browse</a>
+                    </div>
+
+                    @if (Model.Offers.Count == 0)
+                    {
+                        <div class="alert alert-info mt-3 mb-0">No offers yet. If RAWG provides a Steam link it will be detected automatically; otherwise add a Steam App ID below.</div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive mt-3">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Platform</th>
+                                        <th>Store</th>
+                                        <th>Region</th>
+                                        <th>Price</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var o in Model.Offers)
+                                    {
+                                        <tr>
+                                            <td>@o.Platform</td>
+                                            <td>@o.Store</td>
+                                            <td>@o.Region</td>
+                                            <td>
+                                                @if (o.PriceMinor is null || string.IsNullOrWhiteSpace(o.Currency))
+                                                {
+                                                    <span class="text-body-secondary">—</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fw-semibold">@FormatMoney(o.PriceMinor.Value, o.Currency)</span>
+                                                    @if (o.OriginalPriceMinor is not null && o.OriginalPriceMinor.Value > o.PriceMinor.Value)
+                                                    {
+                                                        <span class="text-body-secondary ms-2"><s>@FormatMoney(o.OriginalPriceMinor.Value, o.Currency)</s></span>
+                                                    }
+                                                }
+                                            </td>
+                                            <td class="text-end">
+                                                <a class="btn btn-sm btn-primary" href="@o.Url" target="_blank" rel="noreferrer">Open</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+
+                    <div class="border-top pt-3 mt-3">
+                        <h3 class="h6 mb-2">Add Steam mapping</h3>
+                        <form method="post" asp-page-handler="SetSteam" class="row g-2 align-items-end">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" asp-for="SteamAppId">Steam App ID</label>
+                                <input class="form-control" asp-for="SteamAppId" placeholder="e.g. 1245620" />
+                                <div class="text-danger small"><span asp-validation-for="SteamAppId"></span></div>
+                            </div>
+                            <div class="col-12 col-md-auto">
+                                <button class="btn btn-outline-primary" type="submit">Save & refresh</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
                     <h2 class="h5">About</h2>
                     <p class="mb-0">
                         @(Model.Game.DescriptionPlain ?? "No description available.")
@@ -121,4 +195,13 @@ else
             }
         </div>
     </div>
+}
+
+@functions {
+    private static string FormatMoney(long minor, string currency)
+    {
+        // Steam returns minor units (e.g. cents/kopeks).
+        var major = minor / 100m;
+        return $"{major:0.00} {currency}";
+    }
 }
