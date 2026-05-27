@@ -58,6 +58,23 @@ else
                         <a class="btn btn-sm btn-outline-secondary" asp-page="/Games/Index">Browse</a>
                     </div>
 
+                    @if (Model.IsDemoMode && Model.Game.ExternalStores.Count > 0)
+                    {
+                        <div class="alert alert-warning mt-3 mb-0">
+                            Demo mode note: store buttons below come from the demo JSON (not live platform APIs).
+                        </div>
+                    }
+
+                    @if (Model.Game.ExternalStores.Count > 0)
+                    {
+                        <div class="mt-3 d-flex flex-wrap gap-2">
+                            @foreach (var s in Model.Game.ExternalStores)
+                            {
+                                <a class="btn btn-sm btn-outline-secondary" href="@s.Url" target="_blank" rel="noreferrer">Open @s.Store</a>
+                            }
+                        </div>
+                    }
+
                     @if (Model.Offers.Count == 0)
                     {
                         <div class="alert alert-info mt-3 mb-0">No offers yet. If RAWG provides a Steam link it will be detected automatically; otherwise add a Steam App ID below.</div>
@@ -94,6 +111,11 @@ else
                                                     {
                                                         <span class="text-body-secondary ms-2"><s>@FormatMoney(o.OriginalPriceMinor.Value, o.Currency)</s></span>
                                                     }
+
+                                                    if (o.Currency != "UAH" && Model.OfferUahMajor.TryGetValue(o.Id, out var uah) && uah is not null)
+                                                    {
+                                                        <div class="small text-body-secondary mt-1">≈ @($"{uah.Value:0.00} UAH")</div>
+                                                    }
                                                 }
                                             </td>
                                             <td class="text-end">
@@ -107,17 +129,26 @@ else
                     }
 
                     <div class="border-top pt-3 mt-3">
-                        <h3 class="h6 mb-2">Add Steam mapping</h3>
-                        <form method="post" asp-page-handler="SetSteam" class="row g-2 align-items-end">
-                            <div class="col-12 col-md-6">
-                                <label class="form-label" asp-for="SteamAppId">Steam App ID</label>
-                                <input class="form-control" asp-for="SteamAppId" placeholder="e.g. 1245620" />
-                                <div class="text-danger small"><span asp-validation-for="SteamAppId"></span></div>
-                            </div>
-                            <div class="col-12 col-md-auto">
-                                <button class="btn btn-outline-primary" type="submit">Save & refresh</button>
-                            </div>
-                        </form>
+                        <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <h3 class="h6 mb-0">Steam mapping (optional)</h3>
+                            <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#steamMap" aria-expanded="false" aria-controls="steamMap">
+                                Add / change
+                            </button>
+                        </div>
+
+                        <div class="collapse mt-3" id="steamMap">
+                            <form method="post" asp-page-handler="SetSteam" class="row g-2 align-items-end">
+                                <div class="col-12 col-md-8">
+                                    <label class="form-label" asp-for="SteamAppIdOrUrl">Steam link or App ID</label>
+                                    <input class="form-control" asp-for="SteamAppIdOrUrl" placeholder="https://store.steampowered.com/app/1245620/  or  1245620" />
+                                    <div class="text-danger small"><span asp-validation-for="SteamAppIdOrUrl"></span></div>
+                                    <div class="form-text">Tip: open Steam in browser and copy the URL.</div>
+                                </div>
+                                <div class="col-12 col-md-auto">
+                                    <button class="btn btn-outline-primary" type="submit">Save & refresh</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,6 +159,36 @@ else
                     <p class="mb-0">
                         @(Model.Game.DescriptionPlain ?? "No description available.")
                     </p>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="h5">Find in Ukraine</h2>
+                    <div class="text-body-secondary small mb-3">Quick searches for physical copies or gift cards. Prices may differ by edition/platform.</div>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://rozetka.com.ua/search/?text=", Model.GameNameForSearch)">
+                            Rozetka
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://prom.ua/ua/search?search_term=", Model.GameNameForSearch)">
+                            Prom.ua
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.olx.ua/d/uk/list/q-", Slugify(Model.GameNameForSearch))">
+                            OLX
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.youtube.com/results?search_query=", Model.GameNameForSearch + " review")">
+                            YouTube review
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.youtube.com/results?search_query=", Model.GameNameForSearch + " gameplay")">
+                            YouTube gameplay
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -203,5 +264,22 @@ else
         // Steam returns minor units (e.g. cents/kopeks).
         var major = minor / 100m;
         return $"{major:0.00} {currency}";
+    }
+
+    private static string BuildSearchUrl(string prefix, string query)
+    {
+        query ??= "";
+        return prefix + Uri.EscapeDataString(query);
+    }
+
+    private static string Slugify(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return "";
+        value = value.Trim();
+        value = value.Replace('’', '\'').Replace('–', '-').Replace('—', '-');
+        value = System.Text.RegularExpressions.Regex.Replace(value, "\\s+", "-");
+        value = System.Text.RegularExpressions.Regex.Replace(value, "[^a-zA-Z0-9\\-]+", "");
+        return value.ToLowerInvariant();
     }
 }

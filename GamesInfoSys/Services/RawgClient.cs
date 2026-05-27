@@ -204,6 +204,17 @@ public sealed class RawgClient
         if (game is null)
             return null;
 
+        var demo = await LoadDemoRawAsync();
+        var item = demo.FirstOrDefault(x => x.Id == id);
+
+        var external = new List<ExternalStoreLink>();
+        AddExternal(external, "Steam", item?.SteamUrl);
+        AddExternal(external, "PlayStation", item?.PsnUrl);
+        AddExternal(external, "Xbox", item?.XboxUrl);
+        AddExternal(external, "Nintendo", item?.NintendoUrl);
+        AddExternal(external, "Epic Games", item?.EpicUrl);
+        AddExternal(external, "GOG", item?.GogUrl);
+
         return new GameDetails(
             game.Id,
             game.Name,
@@ -219,7 +230,7 @@ public sealed class RawgClient
             [],
             [],
             [],
-            []
+            external
         );
     }
 
@@ -247,6 +258,21 @@ public sealed class RawgClient
                     g.Platforms ?? []
                 ))
                 .ToList();
+        }) ?? [];
+    }
+
+    private async Task<IReadOnlyList<DemoGame>> LoadDemoRawAsync()
+    {
+        return await _cache.GetOrCreateAsync("demo:games:raw", async entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(12);
+
+            var path = Path.Combine(_env.ContentRootPath, "Data", "demo-games.json");
+            if (!File.Exists(path))
+                return (IReadOnlyList<DemoGame>)[];
+
+            var json = await File.ReadAllTextAsync(path);
+            return (IReadOnlyList<DemoGame>)(JsonSerializer.Deserialize<List<DemoGame>>(json, JsonOptions) ?? []);
         }) ?? [];
     }
 
@@ -324,5 +350,19 @@ public sealed class RawgClient
         public string? BackgroundImage { get; set; }
         public List<string>? Genres { get; set; }
         public List<string>? Platforms { get; set; }
+
+        public string? SteamUrl { get; set; }
+        public string? PsnUrl { get; set; }
+        public string? XboxUrl { get; set; }
+        public string? NintendoUrl { get; set; }
+        public string? EpicUrl { get; set; }
+        public string? GogUrl { get; set; }
+    }
+
+    private static void AddExternal(List<ExternalStoreLink> list, string store, string? url)
+    {
+        if (string.IsNullOrWhiteSpace(url))
+            return;
+        list.Add(new ExternalStoreLink(store, url.Trim()));
     }
 }

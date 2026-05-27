@@ -22,6 +22,15 @@ builder.Services.AddDbContext<GamesInfoSys.Data.AppDbContext>(o =>
     o.UseSqlite("Data Source=app.db");
 });
 
+builder.Services.Configure<GamesInfoSys.Services.CurrencyOptions>(builder.Configuration.GetSection("Currency"));
+builder.Services.AddHttpClient<GamesInfoSys.Services.NbuRatesClient>((sp, client) =>
+{
+    var options = sp.GetRequiredService<Microsoft.Extensions.Options.IOptions<GamesInfoSys.Services.CurrencyOptions>>().Value;
+    client.BaseAddress = new Uri(options.NbuBaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
+builder.Services.AddScoped<GamesInfoSys.Services.CurrencyConverter>();
+
 builder.Services.AddHttpClient<GamesInfoSys.Services.SteamStoreClient>(client =>
 {
     client.BaseAddress = new Uri("https://store.steampowered.com/");

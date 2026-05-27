@@ -26,6 +26,7 @@ To enable live data, set a RAWG API key:
 
 - Default region is Ukraine: `Pricing:DefaultRegion = "UA"`
 - Nintendo Switch override uses South Africa: `Pricing:PlatformRegions:Switch = "ZA"`
+- Preferred display currency: `Pricing:PreferredCurrency = "UAH"` (UI shows ≈ UAH conversion when store currency is not UAH)
 
 ## Price tracking (MVP)
 
@@ -34,3 +35,12 @@ This MVP stores offers in a local SQLite file `app.db`.
 1) Open a game details page.
 2) Paste a Steam App ID (example: `1245620`) and click “Save & refresh”.
 3) The page shows the current Steam price for region `UA` and keeps a history table in the database.
+
+## UAH conversion
+
+The UI converts non-UAH prices to approximate UAH using cached exchange rates from the National Bank of Ukraine (NBU).
+You can change the base URL in `GamesInfoSys/appsettings.json` under `Currency:NbuBaseUrl`.
+
+## UA retailers + YouTube
+
+Each game page includes quick search buttons for `rozetka.com.ua`, `prom.ua`, `olx.ua`, plus YouTube “review” and “gameplay” searches.
