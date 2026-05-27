@@ -48,7 +48,12 @@ else
                 <a class="card h-100 text-decoration-none gis-card" asp-page="/Games/Details" asp-route-id="@g.Id">
                     @if (!string.IsNullOrWhiteSpace(g.BackgroundImage))
                     {
-                        <img class="card-img-top gis-cover" src="@g.BackgroundImage" alt="@g.Name cover" loading="lazy" />
+                        <img class="card-img-top gis-cover" src="@g.BackgroundImage" alt="@g.Name cover" loading="lazy"
+                             onerror="this.onerror=null;this.src='/img/cover-placeholder.svg';" />
+                    }
+                    else
+                    {
+                        <img class="card-img-top gis-cover" src="/img/cover-placeholder.svg" alt="@g.Name cover" loading="lazy" />
                     }
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start gap-2">

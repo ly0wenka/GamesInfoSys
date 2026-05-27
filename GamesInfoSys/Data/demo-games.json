@@ -1,113 +1,2552 @@
-[
-  {
-    "id": 3498,
-    "name": "Grand Theft Auto V",
-    "released": "2013-09-17",
-    "rating": 4.48,
-    "ratingsCount": 7000,
-    "backgroundImage": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-    "genres": ["Action", "Adventure"],
-    "platforms": ["PC", "PlayStation", "Xbox"],
-    "steamUrl": "https://store.steampowered.com/app/271590/"
-  },
-  {
-    "id": 4200,
-    "name": "Portal 2",
-    "released": "2011-04-18",
-    "rating": 4.62,
-    "ratingsCount": 8000,
-    "backgroundImage": "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg",
-    "genres": ["Puzzle", "Shooter"],
-    "platforms": ["PC", "PlayStation", "Xbox"],
-    "steamUrl": "https://store.steampowered.com/app/620/"
-  },
-  {
-    "id": 5679,
-    "name": "The Elder Scrolls V: Skyrim",
-    "released": "2011-11-11",
-    "rating": 4.42,
-    "ratingsCount": 7000,
-    "backgroundImage": "https://media.rawg.io/media/games/1a6/1a6e0a05e5c1c2b2d8721c61c41e1ed3.jpg",
-    "genres": ["RPG", "Adventure"],
-    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
-    "steamUrl": "https://store.steampowered.com/app/72850/"
-  },
-  {
-    "id": 326243,
-    "name": "Elden Ring",
-    "released": "2022-02-25",
-    "rating": 4.39,
-    "ratingsCount": 12000,
-    "backgroundImage": "https://media.rawg.io/media/games/7cc/7cc4f441b8e7b3821e3f0d0b31e68b14.jpg",
-    "genres": ["Action", "RPG"],
-    "platforms": ["PC", "PlayStation", "Xbox"],
-    "steamUrl": "https://store.steampowered.com/app/1245620/"
-  },
-  {
-    "id": 41494,
-    "name": "Cyberpunk 2077",
-    "released": "2020-12-10",
-    "rating": 4.07,
-    "ratingsCount": 9000,
-    "backgroundImage": "https://media.rawg.io/media/games/0b4/0b4e5b6d0bb6a2c6fd1f5d9e5cf72b60.jpg",
-    "genres": ["RPG", "Action"],
-    "platforms": ["PC", "PlayStation", "Xbox"],
-    "steamUrl": "https://store.steampowered.com/app/1091500/"
-  },
-  {
-    "id": 3328,
-    "name": "The Witcher 3: Wild Hunt",
-    "released": "2015-05-18",
-    "rating": 4.67,
-    "ratingsCount": 7000,
-    "backgroundImage": "https://media.rawg.io/media/games/618/618c2031a07bbff6d4f611f10b6bcdbc.jpg",
-    "genres": ["RPG", "Adventure"],
-    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
-    "steamUrl": "https://store.steampowered.com/app/292030/"
-  },
-  {
-    "id": 3192,
-    "name": "Hollow Knight",
-    "released": "2017-02-24",
-    "rating": 4.41,
-    "ratingsCount": 6000,
-    "backgroundImage": "https://media.rawg.io/media/games/1b4/1b4f5d0b0f8c5b2d7b3d2a4b9c9a6d88.jpg",
-    "genres": ["Platformer", "Adventure"],
-    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
-    "steamUrl": "https://store.steampowered.com/app/367520/"
-  },
-  {
-    "id": 278,
-    "name": "Hades",
-    "released": "2020-09-17",
-    "rating": 4.46,
-    "ratingsCount": 6000,
-    "backgroundImage": "https://media.rawg.io/media/games/4c2/4c2fd5f3f6d2a35b9abf2cb2fb3e2e3f.jpg",
-    "genres": ["Action", "Indie"],
-    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
-    "steamUrl": "https://store.steampowered.com/app/1145360/"
-  },
-  {
-    "id": 28,
-    "name": "Red Dead Redemption 2",
-    "released": "2018-10-26",
-    "rating": 4.58,
-    "ratingsCount": 7000,
-    "backgroundImage": "https://media.rawg.io/media/games/511/511f5d979d3d8c6b9c0a20b77c2b7d9d.jpg",
-    "genres": ["Action", "Adventure"],
-    "platforms": ["PC", "PlayStation", "Xbox"],
-    "steamUrl": "https://store.steampowered.com/app/1174180/"
-  },
-  {
-    "id": 654,
-    "name": "Stardew Valley",
-    "released": "2016-02-26",
-    "rating": 4.43,
-    "ratingsCount": 8000,
-    "backgroundImage": "https://media.rawg.io/media/games/1f5/1f5d0b0e5cddf5a5f8a0d8c2f9b6b6b0.jpg",
-    "genres": ["Simulation", "Indie"],
-    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Mobile"],
-    "steamUrl": "https://store.steampowered.com/app/413150/",
-    "gogUrl": "https://www.gog.com/game/stardew_valley"
-  }
+﻿[
+    {
+        "id":  730,
+        "name":  "Counter-Strike 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/730/"
+    },
+    {
+        "id":  2483190,
+        "name":  "Forza Horizon 6",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2483190/"
+    },
+    {
+        "id":  3768760,
+        "name":  "007 First Light",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3768760/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3768760/"
+    },
+    {
+        "id":  1962700,
+        "name":  "Subnautica 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1962700/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1962700/"
+    },
+    {
+        "id":  2215200,
+        "name":  "LEGO® Batman™: Legacy of the Dark Knight",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2215200/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2215200/"
+    },
+    {
+        "id":  1118520,
+        "name":  "Paralives",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1118520/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1118520/"
+    },
+    {
+        "id":  578080,
+        "name":  "PUBG: BATTLEGROUNDS",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/578080/"
+    },
+    {
+        "id":  3240220,
+        "name":  "Grand Theft Auto V Enhanced",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3240220/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3240220/"
+    },
+    {
+        "id":  230410,
+        "name":  "Warframe",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/230410/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/230410/"
+    },
+    {
+        "id":  1172470,
+        "name":  "Apex Legends™",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1172470/"
+    },
+    {
+        "id":  2767030,
+        "name":  "Marvel Rivals",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2767030/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2767030/"
+    },
+    {
+        "id":  2183900,
+        "name":  "Warhammer 40,000: Space Marine 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2183900/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2183900/"
+    },
+    {
+        "id":  381210,
+        "name":  "Dead by Daylight",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/381210/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/381210/"
+    },
+    {
+        "id":  570,
+        "name":  "Dota 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/570/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/570/"
+    },
+    {
+        "id":  3892270,
+        "name":  "Gamble With Your Friends",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3892270/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3892270/"
+    },
+    {
+        "id":  3321460,
+        "name":  "Crimson Desert",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3321460/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3321460/"
+    },
+    {
+        "id":  2344520,
+        "name":  "Diablo® IV",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2344520/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2344520/"
+    },
+    {
+        "id":  3041230,
+        "name":  "Windrose",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3041230/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3041230/"
+    },
+    {
+        "id":  3405690,
+        "name":  "EA SPORTS FC™ 26",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3405690/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3405690/"
+    },
+    {
+        "id":  4197610,
+        "name":  "Librarian: Tidy Up the Arcane Library!",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/4197610/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/4197610/"
+    },
+    {
+        "id":  359550,
+        "name":  "Tom Clancy\u0027s Rainbow Six Siege",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/359550/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/359550/"
+    },
+    {
+        "id":  236390,
+        "name":  "War Thunder",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/236390/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/236390/"
+    },
+    {
+        "id":  252490,
+        "name":  "Rust",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/252490/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/252490/"
+    },
+    {
+        "id":  1142710,
+        "name":  "Total War: WARHAMMER III",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1142710/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1142710/"
+    },
+    {
+        "id":  3513350,
+        "name":  "Wuthering Waves",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3513350/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3513350/"
+    },
+    {
+        "id":  2399830,
+        "name":  "ARK: Survival Ascended",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2399830/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2399830/"
+    },
+    {
+        "id":  2868840,
+        "name":  "Slay the Spire 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2868840/"
+    },
+    {
+        "id":  3564740,
+        "name":  "Where Winds Meet",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3564740/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3564740/"
+    },
+    {
+        "id":  2694490,
+        "name":  "Path of Exile 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2694490/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2694490/"
+    },
+    {
+        "id":  1304930,
+        "name":  "The Outlast Trials",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1304930/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1304930/"
+    },
+    {
+        "id":  3472040,
+        "name":  "NBA 2K26",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3472040/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3472040/"
+    },
+    {
+        "id":  440,
+        "name":  "Team Fortress 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/440/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/440/"
+    },
+    {
+        "id":  3124540,
+        "name":  "Far Far West",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3124540/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3124540/"
+    },
+    {
+        "id":  3241660,
+        "name":  "R.E.P.O.",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3241660/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3241660/"
+    },
+    {
+        "id":  1086940,
+        "name":  "Baldur\u0027s Gate 3",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1086940/"
+    },
+    {
+        "id":  2605790,
+        "name":  "Deep Rock Galactic: Rogue Core",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2605790/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2605790/"
+    },
+    {
+        "id":  275850,
+        "name":  "No Man\u0027s Sky",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/275850/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/275850/"
+    },
+    {
+        "id":  1245620,
+        "name":  "ELDEN RING",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1245620/"
+    },
+    {
+        "id":  3527290,
+        "name":  "PEAK",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3527290/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3527290/"
+    },
+    {
+        "id":  3357650,
+        "name":  "PRAGMATA",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3357650/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3357650/"
+    },
+    {
+        "id":  39210,
+        "name":  "FINAL FANTASY XIV Online",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/39210/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/39210/"
+    },
+    {
+        "id":  553850,
+        "name":  "HELLDIVERS™ 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/553850/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/553850/"
+    },
+    {
+        "id":  1808500,
+        "name":  "ARC Raiders",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1808500/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1808500/"
+    },
+    {
+        "id":  1190970,
+        "name":  "House Flipper 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1190970/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1190970/"
+    },
+    {
+        "id":  3105440,
+        "name":  "Heroes of Might and Magic: Olden Era",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3105440/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3105440/"
+    },
+    {
+        "id":  2357570,
+        "name":  "Overwatch®",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2357570/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2357570/"
+    },
+    {
+        "id":  2807960,
+        "name":  "Battlefield™ 6",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2807960/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2807960/"
+    },
+    {
+        "id":  2507950,
+        "name":  "Delta Force",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2507950/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2507950/"
+    },
+    {
+        "id":  632360,
+        "name":  "Risk of Rain 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/632360/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/632360/"
+    },
+    {
+        "id":  1361210,
+        "name":  "Warhammer 40,000: Darktide",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1361210/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1361210/"
+    },
+    {
+        "id":  1771300,
+        "name":  "Kingdom Come: Deliverance II",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1771300/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1771300/"
+    },
+    {
+        "id":  582660,
+        "name":  "Black Desert",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/582660/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/582660/"
+    },
+    {
+        "id":  3764200,
+        "name":  "Resident Evil Requiem",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3764200/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3764200/"
+    },
+    {
+        "id":  1623730,
+        "name":  "Palworld",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1623730/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1623730/"
+    },
+    {
+        "id":  3932890,
+        "name":  "Escape from Tarkov",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3932890/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3932890/"
+    },
+    {
+        "id":  440900,
+        "name":  "Conan Exiles Enhanced",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/440900/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/440900/"
+    },
+    {
+        "id":  3164500,
+        "name":  "Schedule I",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3164500/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3164500/"
+    },
+    {
+        "id":  306130,
+        "name":  "The Elder Scrolls® Online",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/306130/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/306130/"
+    },
+    {
+        "id":  3065800,
+        "name":  "Marathon",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3065800/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3065800/"
+    },
+    {
+        "id":  552990,
+        "name":  "World of Warships",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/552990/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/552990/"
+    },
+    {
+        "id":  2186680,
+        "name":  "Warhammer 40,000: Rogue Trader",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2186680/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2186680/"
+    },
+    {
+        "id":  227300,
+        "name":  "Euro Truck Simulator 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/227300/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/227300/"
+    },
+    {
+        "id":  1778820,
+        "name":  "TEKKEN 8",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1778820/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1778820/"
+    },
+    {
+        "id":  1222670,
+        "name":  "The Sims™ 4",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1222670/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1222670/"
+    },
+    {
+        "id":  2141910,
+        "name":  "Magic: The Gathering Arena",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2141910/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2141910/"
+    },
+    {
+        "id":  1973530,
+        "name":  "Limbus Company",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1973530/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1973530/"
+    },
+    {
+        "id":  1295660,
+        "name":  "Sid Meier\u0027s Civilization VII",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1295660/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1295660/"
+    },
+    {
+        "id":  1091500,
+        "name":  "Cyberpunk 2077",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1091500/"
+    },
+    {
+        "id":  1085660,
+        "name":  "Destiny 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1085660/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1085660/"
+    },
+    {
+        "id":  1151340,
+        "name":  "Fallout 76",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1151340/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1151340/"
+    },
+    {
+        "id":  3404260,
+        "name":  "Dead as Disco",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3404260/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3404260/"
+    },
+    {
+        "id":  753640,
+        "name":  "Outer Wilds",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/753640/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/753640/"
+    },
+    {
+        "id":  1407200,
+        "name":  "World of Tanks",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1407200/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1407200/"
+    },
+    {
+        "id":  413150,
+        "name":  "Stardew Valley",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/413150/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/413150/"
+    },
+    {
+        "id":  2300320,
+        "name":  "Farming Simulator 25",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2300320/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2300320/"
+    },
+    {
+        "id":  1364780,
+        "name":  "Street Fighter™ 6",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1364780/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1364780/"
+    },
+    {
+        "id":  1158310,
+        "name":  "Crusader Kings III",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1158310/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1158310/"
+    },
+    {
+        "id":  3159330,
+        "name":  "Assassin’s Creed Shadows",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3159330/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3159330/"
+    },
+    {
+        "id":  281990,
+        "name":  "Stellaris",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/281990/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/281990/"
+    },
+    {
+        "id":  1286830,
+        "name":  "STAR WARS™: The Old Republic™",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1286830/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1286830/"
+    },
+    {
+        "id":  266410,
+        "name":  "iRacing",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/266410/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/266410/"
+    },
+    {
+        "id":  1607250,
+        "name":  "MY HERO ULTRA RUMBLE",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1607250/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1607250/"
+    },
+    {
+        "id":  1144200,
+        "name":  "Ready or Not",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1144200/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1144200/"
+    },
+    {
+        "id":  264710,
+        "name":  "Subnautica",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/264710/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/264710/"
+    },
+    {
+        "id":  438100,
+        "name":  "VRChat",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/438100/"
+    },
+    {
+        "id":  784080,
+        "name":  "MechWarrior 5: Mercenaries",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/784080/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/784080/"
+    },
+    {
+        "id":  294100,
+        "name":  "RimWorld",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/294100/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/294100/"
+    },
+    {
+        "id":  2073620,
+        "name":  "Arena Breakout: Infinite",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2073620/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2073620/"
+    },
+    {
+        "id":  949230,
+        "name":  "Cities: Skylines II",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/949230/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/949230/"
+    },
+    {
+        "id":  3557620,
+        "name":  "Blue Archive",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3557620/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3557620/"
+    },
+    {
+        "id":  394360,
+        "name":  "Hearts of Iron IV",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/394360/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/394360/"
+    },
+    {
+        "id":  739630,
+        "name":  "Phasmophobia",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/739630/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/739630/"
+    },
+    {
+        "id":  1903340,
+        "name":  "Clair Obscur: Expedition 33",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1903340/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1903340/"
+    },
+    {
+        "id":  233860,
+        "name":  "Kenshi",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/233860/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/233860/"
+    },
+    {
+        "id":  2139460,
+        "name":  "Once Human",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2139460/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2139460/"
+    },
+    {
+        "id":  284160,
+        "name":  "BeamNG.drive",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/284160/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/284160/"
+    },
+    {
+        "id":  216150,
+        "name":  "MapleStory",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/216150/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/216150/"
+    },
+    {
+        "id":  393380,
+        "name":  "Squad",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/393380/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/393380/"
+    },
+    {
+        "id":  270880,
+        "name":  "American Truck Simulator",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/270880/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/270880/"
+    },
+    {
+        "id":  1401590,
+        "name":  "Disney Dreamlight Valley",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1401590/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1401590/"
+    },
+    {
+        "id":  1805320,
+        "name":  "Romestead",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1805320/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1805320/"
+    },
+    {
+        "id":  2073850,
+        "name":  "THE FINALS",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2073850/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2073850/"
+    },
+    {
+        "id":  1665460,
+        "name":  "eFootball™",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1665460/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1665460/"
+    },
+    {
+        "id":  2537590,
+        "name":  "Microsoft Flight Simulator 2024",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2537590/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2537590/"
+    },
+    {
+        "id":  376210,
+        "name":  "The Isle",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/376210/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/376210/"
+    },
+    {
+        "id":  2416450,
+        "name":  "MOUSE: P.I. For Hire",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2416450/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2416450/"
+    },
+    {
+        "id":  648800,
+        "name":  "Raft",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/648800/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/648800/"
+    },
+    {
+        "id":  1643320,
+        "name":  "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1643320/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1643320/"
+    },
+    {
+        "id":  1449850,
+        "name":  "Yu-Gi-Oh! Master Duel",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1449850/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1449850/"
+    },
+    {
+        "id":  2221490,
+        "name":  "Tom Clancy’s The Division® 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2221490/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2221490/"
+    },
+    {
+        "id":  1874880,
+        "name":  "Arma Reforger",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1874880/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1874880/"
+    },
+    {
+        "id":  427520,
+        "name":  "Factorio",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/427520/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/427520/"
+    },
+    {
+        "id":  3949040,
+        "name":  "RV There Yet?",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3949040/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3949040/"
+    },
+    {
+        "id":  1966720,
+        "name":  "Lethal Company",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1966720/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1966720/"
+    },
+    {
+        "id":  1943950,
+        "name":  "Escape the Backrooms",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1943950/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1943950/"
+    },
+    {
+        "id":  3526710,
+        "name":  "Everything is Crab: The Animal Evolution Roguelite",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3526710/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3526710/"
+    },
+    {
+        "id":  3672400,
+        "name":  "Farever",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3672400/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3672400/"
+    },
+    {
+        "id":  108600,
+        "name":  "Project Zomboid",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/108600/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/108600/"
+    },
+    {
+        "id":  2863680,
+        "name":  "ZERO PARADES: For Dead Spies",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2863680/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2863680/"
+    },
+    {
+        "id":  2499860,
+        "name":  "DRAGON QUEST VII Reimagined",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2499860/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2499860/"
+    },
+    {
+        "id":  261550,
+        "name":  "Mount \u0026 Blade II: Bannerlord",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/261550/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/261550/"
+    },
+    {
+        "id":  2074920,
+        "name":  "The First Descendant",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2074920/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2074920/"
+    },
+    {
+        "id":  2707930,
+        "name":  "Palia",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2707930/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2707930/"
+    },
+    {
+        "id":  1326470,
+        "name":  "Sons Of The Forest",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1326470/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1326470/"
+    },
+    {
+        "id":  1547000,
+        "name":  "Grand Theft Auto: San Andreas – The Definitive Edition",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1547000/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1547000/"
+    },
+    {
+        "id":  346110,
+        "name":  "ARK: Survival Evolved",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/346110/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/346110/"
+    },
+    {
+        "id":  1363080,
+        "name":  "Manor Lords",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1363080/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1363080/"
+    },
+    {
+        "id":  250900,
+        "name":  "The Binding of Isaac: Rebirth",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/250900/"
+    },
+    {
+        "id":  3679080,
+        "name":  "The Seven Deadly Sins: Origin",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3679080/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3679080/"
+    },
+    {
+        "id":  246620,
+        "name":  "Plague Inc: Evolved",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/246620/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/246620/"
+    },
+    {
+        "id":  311210,
+        "name":  "Call of Duty®: Black Ops III",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/311210/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/311210/"
+    },
+    {
+        "id":  1172620,
+        "name":  "Sea of Thieves: 2026 Edition",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1172620/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1172620/"
+    },
+    {
+        "id":  2050650,
+        "name":  "Resident Evil 4",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2050650/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2050650/"
+    },
+    {
+        "id":  3326230,
+        "name":  "Hozy",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3326230/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3326230/"
+    },
+    {
+        "id":  594570,
+        "name":  "Total War: WARHAMMER II",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/594570/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/594570/"
+    },
+    {
+        "id":  1174180,
+        "name":  "Red Dead Redemption 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1174180/"
+    },
+    {
+        "id":  2622380,
+        "name":  "ELDEN RING NIGHTREIGN",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2622380/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2622380/"
+    },
+    {
+        "id":  1222140,
+        "name":  "Detroit: Become Human",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1222140/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1222140/"
+    },
+    {
+        "id":  3009300,
+        "name":  "Teamfight Manager 2",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3009300/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3009300/"
+    },
+    {
+        "id":  3265700,
+        "name":  "Vampire Crawlers: The Turbo Wildcard from Vampire Survivors",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3265700/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3265700/"
+    },
+    {
+        "id":  4025700,
+        "name":  "Heartopia",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/4025700/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/4025700/"
+    },
+    {
+        "id":  1285190,
+        "name":  "Borderlands 4",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1285190/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1285190/"
+    },
+    {
+        "id":  1203620,
+        "name":  "Enshrouded",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1203620/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1203620/"
+    },
+    {
+        "id":  220200,
+        "name":  "Kerbal Space Program",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/220200/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/220200/"
+    },
+    {
+        "id":  2057760,
+        "name":  "Esoteric Ebb",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2057760/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2057760/"
+    },
+    {
+        "id":  2001120,
+        "name":  "Split Fiction",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2001120/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2001120/"
+    },
+    {
+        "id":  2456740,
+        "name":  "inZOI",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2456740/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2456740/"
+    },
+    {
+        "id":  3552140,
+        "name":  "Retro Rewind - Video Store Simulator",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3552140/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3552140/"
+    },
+    {
+        "id":  2681030,
+        "name":  "Outbound",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2681030/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2681030/"
+    },
+    {
+        "id":  4069520,
+        "name":  "Super Battle Golf",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/4069520/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/4069520/"
+    },
+    {
+        "id":  526870,
+        "name":  "Satisfactory",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/526870/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/526870/"
+    },
+    {
+        "id":  2747330,
+        "name":  "Species: Unknown",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2747330/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2747330/"
+    },
+    {
+        "id":  2261430,
+        "name":  "LumenTale: Memories of Trey",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2261430/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2261430/"
+    },
+    {
+        "id":  435150,
+        "name":  "Divinity: Original Sin 2 - Definitive Edition",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/435150/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/435150/"
+    },
+    {
+        "id":  3280350,
+        "name":  "DEATH STRANDING 2: ON THE BEACH",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3280350/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3280350/"
+    },
+    {
+        "id":  2479810,
+        "name":  "Gray Zone Warfare",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2479810/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2479810/"
+    },
+    {
+        "id":  1332010,
+        "name":  "Stray",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1332010/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1332010/"
+    },
+    {
+        "id":  1659040,
+        "name":  "HITMAN World of Assassination",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1659040/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1659040/"
+    },
+    {
+        "id":  3751950,
+        "name":  "Assassin\u0027s Creed Black Flag Resynced",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3751950/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3751950/"
+    },
+    {
+        "id":  594650,
+        "name":  "Hunt: Showdown 1896",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/594650/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/594650/"
+    },
+    {
+        "id":  4128580,
+        "name":  "BidKing",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/4128580/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/4128580/"
+    },
+    {
+        "id":  1677280,
+        "name":  "Company of Heroes 3",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1677280/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1677280/"
+    },
+    {
+        "id":  105600,
+        "name":  "Terraria",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/105600/"
+    },
+    {
+        "id":  2592160,
+        "name":  "Dispatch",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/2592160/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/2592160/"
+    },
+    {
+        "id":  703080,
+        "name":  "Planet Zoo",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/703080/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/703080/"
+    },
+    {
+        "id":  3028330,
+        "name":  "Battlefield™ REDSEC",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3028330/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3028330/"
+    },
+    {
+        "id":  3948120,
+        "name":  "Scritchy Scratchy",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/3948120/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/3948120/"
+    },
+    {
+        "id":  813780,
+        "name":  "Age of Empires II: Definitive Edition",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/813780/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/813780/"
+    },
+    {
+        "id":  1203220,
+        "name":  "NARAKA: BLADEPOINT",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1203220/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1203220/"
+    },
+    {
+        "id":  1466860,
+        "name":  "Age of Empires IV: Anniversary Edition",
+        "released":  null,
+        "rating":  null,
+        "ratingsCount":  null,
+        "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1466860/header.jpg",
+        "genres":  [
+
+                   ],
+        "platforms":  [
+                          "PC"
+                      ],
+        "steamUrl":  "https://store.steampowered.com/app/1466860/"
+    }
 ]

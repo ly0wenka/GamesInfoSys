@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Cover unavailable">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#212529"/>
+      <stop offset="1" stop-color="#0d6efd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g)"/>
+  <rect x="40" y="40" width="1200" height="640" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+  <g fill="rgba(255,255,255,0.85)">
+    <path d="M392 312c0-13 11-24 24-24h448c13 0 24 11 24 24v248c0 13-11 24-24 24H416c-13 0-24-11-24-24V312zm40 40v168l108-86 94 74 152-126 86 68V352H432z"/>
+    <circle cx="530" cy="362" r="26"/>
+  </g>
+  <text x="640" y="620" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="36" fill="rgba(255,255,255,0.9)">
+    Cover image unavailable
+  </text>
+</svg>
+

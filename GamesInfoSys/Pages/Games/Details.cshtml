@@ -16,7 +16,12 @@ else
             <div class="card">
                 @if (!string.IsNullOrWhiteSpace(Model.Game.BackgroundImage))
                 {
-                    <img class="card-img-top gis-cover" src="@Model.Game.BackgroundImage" alt="@Model.Game.Name cover" />
+                    <img class="card-img-top gis-cover" src="@Model.Game.BackgroundImage" alt="@Model.Game.Name cover"
+                         onerror="this.onerror=null;this.src='/img/cover-placeholder.svg';" />
+                }
+                else
+                {
+                    <img class="card-img-top gis-cover" src="/img/cover-placeholder.svg" alt="@Model.Game.Name cover" />
                 }
                 <div class="card-body">
                     <h1 class="h4 mb-2">@Model.Game.Name</h1>
