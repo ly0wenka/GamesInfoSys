@@ -36,6 +36,13 @@ builder.Services.AddHttpClient<GamesInfoSys.Services.SteamStoreClient>(client =>
     client.BaseAddress = new Uri("https://store.steampowered.com/");
     client.Timeout = TimeSpan.FromSeconds(15);
 });
+builder.Services.AddHttpClient<GamesInfoSys.Services.CheapSharkClient>(client =>
+{
+    client.BaseAddress = new Uri("https://www.cheapshark.com/");
+    client.Timeout = TimeSpan.FromSeconds(15);
+    // CheapShark requires a descriptive User-Agent to avoid accidental blocking.
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("GamesInfoSys/1.0 (no-key; marketplace redirects)");
+});
 builder.Services.AddScoped<GamesInfoSys.Services.OfferAggregator>();
 
 var app = builder.Build();

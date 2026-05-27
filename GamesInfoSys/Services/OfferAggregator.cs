@@ -10,12 +10,14 @@ public sealed class OfferAggregator
     private readonly AppDbContext _db;
     private readonly RegionResolver _regions;
     private readonly SteamStoreClient _steam;
+    private readonly CheapSharkClient _cheapShark;
 
-    public OfferAggregator(AppDbContext db, RegionResolver regions, SteamStoreClient steam)
+    public OfferAggregator(AppDbContext db, RegionResolver regions, SteamStoreClient steam, CheapSharkClient cheapShark)
     {
         _db = db;
         _regions = regions;
         _steam = steam;
+        _cheapShark = cheapShark;
     }
 
     public async Task<IReadOnlyList<StoreOffer>> GetOffersForRawgGameAsync(int rawgGameId)
@@ -73,6 +75,7 @@ public sealed class OfferAggregator
         if (!string.IsNullOrWhiteSpace(tracked.SteamAppId))
         {
             await SyncSteamAsync(tracked);
+            await SyncCheapSharkAsync(tracked);
         }
 
         // TODO: add platform ingestors here (PSN/Xbox/Nintendo/Epic/GOG/etc).
@@ -156,6 +159,63 @@ public sealed class OfferAggregator
             });
             await _db.SaveChangesAsync();
         }
+    }
+
+    private async Task SyncCheapSharkAsync(TrackedGame game)
+    {
+        var deals = await _cheapShark.GetDealsBySteamAppIdAsync(game.SteamAppId!, pageSize: 20, onSaleOnly: false);
+        if (deals.Count == 0)
+            return;
+
+        var now = DateTime.UtcNow;
+        var region = "GLOBAL";
+
+        foreach (var d in deals)
+        {
+            var externalId = d.DealId;
+            var existing = await _db.StoreOffers.FirstOrDefaultAsync(o =>
+                o.Store == "CheapShark" &&
+                o.ExternalId == externalId &&
+                o.Region == region);
+
+            var priceMinor = d.SalePriceUsd is null ? (long?)null : (long)Math.Round(d.SalePriceUsd.Value * 100m, MidpointRounding.AwayFromZero);
+            var originalMinor = d.NormalPriceUsd is null ? (long?)null : (long)Math.Round(d.NormalPriceUsd.Value * 100m, MidpointRounding.AwayFromZero);
+
+            var title = string.IsNullOrWhiteSpace(d.Title) ? (game.Name ?? "Deal") : d.Title;
+            var url = CheapSharkClient.RedirectUrl(d.DealId);
+
+            if (existing is null)
+            {
+                existing = new StoreOffer
+                {
+                    TrackedGameId = game.Id,
+                    Store = "CheapShark",
+                    Platform = "PC",
+                    Region = region,
+                    ExternalId = externalId,
+                    Title = title,
+                    Url = url,
+                    Currency = "USD",
+                    PriceMinor = priceMinor,
+                    OriginalPriceMinor = originalMinor,
+                    LastSeenUtc = now,
+                    LastUpdatedUtc = now
+                };
+                _db.StoreOffers.Add(existing);
+            }
+            else
+            {
+                existing.Title = title;
+                existing.Url = url;
+                existing.Currency = "USD";
+                existing.PriceMinor = priceMinor;
+                existing.OriginalPriceMinor = originalMinor;
+                existing.LastSeenUtc = now;
+                existing.LastUpdatedUtc = now;
+            }
+        }
+
+        await _db.SaveChangesAsync();
     }
 
     private static string? TryInferSteamAppId(GameDetails details)

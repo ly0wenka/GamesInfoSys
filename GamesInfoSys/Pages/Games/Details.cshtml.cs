@@ -25,6 +25,7 @@ public sealed class DetailsModel : PageModel
     public IReadOnlyList<Data.Entities.StoreOffer> Offers { get; private set; } = [];
     public Dictionary<long, decimal?> OfferUahMajor { get; private set; } = new();
     public string GameNameForSearch => Game?.Name ?? "";
+    public Data.Entities.StoreOffer? BestMarketplaceOffer { get; private set; }
 
     [BindProperty(SupportsGet = false)]
     public string? SteamAppIdOrUrl { get; set; }
@@ -37,6 +38,10 @@ public sealed class DetailsModel : PageModel
 
         await _offers.SyncOffersForRawgGameAsync(id, Game.Name, Game);
         Offers = await _offers.GetOffersForRawgGameAsync(id);
+        BestMarketplaceOffer = Offers
+            .Where(o => o.Store == "CheapShark" && o.PriceMinor is not null)
+            .OrderBy(o => o.PriceMinor)
+            .FirstOrDefault();
         OfferUahMajor = await ComputeUahAsync(Offers);
 
         Screenshots = await _rawg.GetScreenshotsAsync(id);

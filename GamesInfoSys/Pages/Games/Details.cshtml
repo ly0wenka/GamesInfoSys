@@ -80,6 +80,18 @@ else
                         </div>
                     }
 
+                    @if (Model.BestMarketplaceOffer is not null && Model.BestMarketplaceOffer.PriceMinor is not null)
+                    {
+                        <div class="alert alert-warning mt-3 mb-0">
+                            Best marketplace deal: <strong>@FormatMoney(Model.BestMarketplaceOffer.PriceMinor.Value, Model.BestMarketplaceOffer.Currency ?? "USD")</strong>
+                            @if (Model.OfferUahMajor.TryGetValue(Model.BestMarketplaceOffer.Id, out var uah) && uah is not null)
+                            {
+                                <span class="ms-2">(≈ @($"{uah.Value:0.00} UAH"))</span>
+                            }
+                            <a class="ms-2" href="@Model.BestMarketplaceOffer.Url" target="_blank" rel="noreferrer">Open</a>
+                        </div>
+                    }
+
                     @if (Model.Offers.Count == 0)
                     {
                         <div class="alert alert-info mt-3 mb-0">No offers yet. If RAWG provides a Steam link it will be detected automatically; otherwise add a Steam App ID below.</div>
@@ -100,9 +112,16 @@ else
                                 <tbody>
                                     @foreach (var o in Model.Offers)
                                     {
+                                        var isMarketplace = o.Store == "CheapShark";
                                         <tr>
                                             <td>@o.Platform</td>
-                                            <td>@o.Store</td>
+                                            <td>
+                                                @o.Store
+                                                @if (isMarketplace)
+                                                {
+                                                    <span class="badge text-bg-warning ms-2">Marketplace</span>
+                                                }
+                                            </td>
                                             <td>@o.Region</td>
                                             <td>
                                                 @if (o.PriceMinor is null || string.IsNullOrWhiteSpace(o.Currency))
@@ -124,7 +143,9 @@ else
                                                 }
                                             </td>
                                             <td class="text-end">
-                                                <a class="btn btn-sm btn-primary" href="@o.Url" target="_blank" rel="noreferrer">Open</a>
+                                                <a class="btn btn-sm btn-primary" href="@o.Url" target="_blank" rel="noreferrer">
+                                                    @(isMarketplace ? "Open deal" : "Open")
+                                                </a>
                                             </td>
                                         </tr>
                                     }
