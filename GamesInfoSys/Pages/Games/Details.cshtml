@@ -1,0 +1,124 @@
+@page "/Games/{id:int}"
+@model GamesInfoSys.Pages.Games.DetailsModel
+@{
+    ViewData["Title"] = Model.Game?.Name ?? "Game";
+}
+
+@if (Model.Game is null)
+{
+    <div class="alert alert-warning">Game not found.</div>
+    <a class="btn btn-outline-secondary" asp-page="/Games/Index">Back</a>
+}
+else
+{
+    <div class="row g-4">
+        <div class="col-12 col-lg-4">
+            <div class="card">
+                @if (!string.IsNullOrWhiteSpace(Model.Game.BackgroundImage))
+                {
+                    <img class="card-img-top gis-cover" src="@Model.Game.BackgroundImage" alt="@Model.Game.Name cover" />
+                }
+                <div class="card-body">
+                    <h1 class="h4 mb-2">@Model.Game.Name</h1>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        @if (!string.IsNullOrWhiteSpace(Model.Game.Released))
+                        {
+                            <span class="badge text-bg-light border">Released: @Model.Game.Released</span>
+                        }
+                        @if (Model.Game.Metacritic is not null)
+                        {
+                            <span class="badge text-bg-light border">Metacritic: @Model.Game.Metacritic</span>
+                        }
+                        @if (Model.Game.Rating is not null)
+                        {
+                            <span class="badge text-bg-light border">Rating: ★ @Model.Game.Rating</span>
+                        }
+                    </div>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Game.Website))
+                    {
+                        <div class="mb-3">
+                            <a class="btn btn-sm btn-primary w-100" href="@Model.Game.Website" target="_blank" rel="noreferrer">Official website</a>
+                        </div>
+                    }
+
+                    <a class="btn btn-outline-secondary w-100" asp-page="/Games/Index">Back to browse</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="h5">About</h2>
+                    <p class="mb-0">
+                        @(Model.Game.DescriptionPlain ?? "No description available.")
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="h6">Genres</h2>
+                            @if (Model.Game.Genres.Count == 0)
+                            {
+                                <div class="text-body-secondary">—</div>
+                            }
+                            else
+                            {
+                                <div class="gis-tags">
+                                    @foreach (var x in Model.Game.Genres)
+                                    {
+                                        <span class="badge text-bg-light border">@x</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="h6">Platforms</h2>
+                            @if (Model.Game.Platforms.Count == 0)
+                            {
+                                <div class="text-body-secondary">—</div>
+                            }
+                            else
+                            {
+                                <div class="gis-tags">
+                                    @foreach (var x in Model.Game.Platforms)
+                                    {
+                                        <span class="badge text-bg-light border">@x</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if (!Model.IsDemoMode && Model.Screenshots.Count > 0)
+            {
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h2 class="h5 mb-3">Screenshots</h2>
+                        <div class="row g-2">
+                            @foreach (var s in Model.Screenshots)
+                            {
+                                if (string.IsNullOrWhiteSpace(s.Image)) { continue; }
+                                <div class="col-6 col-md-4">
+                                    <a href="@s.Image" target="_blank" rel="noreferrer">
+                                        <img class="img-fluid rounded gis-shot" src="@s.Image" alt="Screenshot" loading="lazy" />
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
