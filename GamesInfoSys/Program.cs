@@ -31,6 +31,14 @@ builder.Services.AddHttpClient<GamesInfoSys.Services.NbuRatesClient>((sp, client
 });
 builder.Services.AddScoped<GamesInfoSys.Services.CurrencyConverter>();
 
+builder.Services.Configure<GamesInfoSys.Services.ScrapingOptions>(builder.Configuration.GetSection("Scraping"));
+builder.Services.AddHttpClient<GamesInfoSys.Services.UaMarketplaceScraper>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(20);
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("GamesInfoSys/1.0 (UA price tracker; scraping MVP)");
+    client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("uk-UA,uk;q=0.9,en;q=0.6");
+});
+
 builder.Services.AddHttpClient<GamesInfoSys.Services.SteamStoreClient>(client =>
 {
     client.BaseAddress = new Uri("https://store.steampowered.com/");

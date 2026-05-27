@@ -112,7 +112,7 @@ else
                                 <tbody>
                                     @foreach (var o in Model.Offers)
                                     {
-                                        var isMarketplace = o.Store == "CheapShark";
+                                        var isMarketplace = o.Store != "Steam";
                                         <tr>
                                             <td>@o.Platform</td>
                                             <td>
@@ -195,6 +195,22 @@ else
 
                     <div class="d-flex flex-wrap gap-2">
                         <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.cheapshark.com/search#q:", Model.GameNameForSearch)">
+                            CheapShark deals
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.bing.com/search?q=site%3Astore.playstation.com+uk-ua+", Model.GameNameForSearch)">
+                            PS Store (official)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.bing.com/search?q=site%3Axbox.com+", Model.GameNameForSearch)">
+                            Xbox Store (official)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.bing.com/search?q=site%3Anintendo.com+en-za+", Model.GameNameForSearch + " Nintendo Switch")">
+                            Nintendo eShop ZA (official)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
                            href="@BuildSearchUrl("https://rozetka.com.ua/search/?text=", Model.GameNameForSearch)">
                             Rozetka
                         </a>
@@ -213,6 +229,48 @@ else
                         <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
                            href="@BuildSearchUrl("https://www.youtube.com/results?search_query=", Model.GameNameForSearch + " gameplay")">
                             YouTube gameplay
+                        </a>
+                    </div>
+
+                    <hr class="my-3" />
+
+                    <div class="text-body-secondary small mb-2">Platform searches</div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://prom.ua/ua/search?search_term=", Model.GameNameForSearch + " playstation")">
+                            Prom (PS)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.olx.ua/uk/elektronika/igry-i-igrovye-pristavki/pristavki/q-", Slugify(Model.GameNameForSearch + " playstation"))">
+                            OLX (PS)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://rozetka.com.ua/search/?text=", Model.GameNameForSearch + " playstation")">
+                            Rozetka (PS)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://prom.ua/ua/search?search_term=", Model.GameNameForSearch + " xbox")">
+                            Prom (Xbox)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.olx.ua/uk/elektronika/igry-i-igrovye-pristavki/pristavki/q-", Slugify(Model.GameNameForSearch + " xbox"))">
+                            OLX (Xbox)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://rozetka.com.ua/search/?text=", Model.GameNameForSearch + " xbox")">
+                            Rozetka (Xbox)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://prom.ua/ua/search?search_term=", Model.GameNameForSearch + " nintendo switch")">
+                            Prom (Switch)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://www.olx.ua/uk/elektronika/igry-i-igrovye-pristavki/pristavki/q-", Slugify(Model.GameNameForSearch + " nintendo switch"))">
+                            OLX (Switch)
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noreferrer"
+                           href="@BuildSearchUrl("https://rozetka.com.ua/search/?text=", Model.GameNameForSearch + " nintendo switch")">
+                            Rozetka (Switch)
                         </a>
                     </div>
                 </div>

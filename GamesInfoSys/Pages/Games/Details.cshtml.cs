@@ -39,7 +39,7 @@ public sealed class DetailsModel : PageModel
         await _offers.SyncOffersForRawgGameAsync(id, Game.Name, Game);
         Offers = await _offers.GetOffersForRawgGameAsync(id);
         BestMarketplaceOffer = Offers
-            .Where(o => o.Store == "CheapShark" && o.PriceMinor is not null)
+            .Where(o => o.Store != "Steam" && o.PriceMinor is not null)
             .OrderBy(o => o.PriceMinor)
             .FirstOrDefault();
         OfferUahMajor = await ComputeUahAsync(Offers);

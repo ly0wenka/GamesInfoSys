@@ -11,13 +11,20 @@ public sealed class OfferAggregator
     private readonly RegionResolver _regions;
     private readonly SteamStoreClient _steam;
     private readonly CheapSharkClient _cheapShark;
+    private readonly UaMarketplaceScraper _uaScraper;
 
-    public OfferAggregator(AppDbContext db, RegionResolver regions, SteamStoreClient steam, CheapSharkClient cheapShark)
+    public OfferAggregator(
+        AppDbContext db,
+        RegionResolver regions,
+        SteamStoreClient steam,
+        CheapSharkClient cheapShark,
+        UaMarketplaceScraper uaScraper)
     {
         _db = db;
         _regions = regions;
         _steam = steam;
         _cheapShark = cheapShark;
+        _uaScraper = uaScraper;
     }
 
     public async Task<IReadOnlyList<StoreOffer>> GetOffersForRawgGameAsync(int rawgGameId)
@@ -76,6 +83,12 @@ public sealed class OfferAggregator
         {
             await SyncSteamAsync(tracked);
             await SyncCheapSharkAsync(tracked);
+        }
+
+        if (!string.IsNullOrWhiteSpace(tracked.Name))
+        {
+            await SyncUaMarketplacesAsync(tracked, platform: "Xbox", query: $"{tracked.Name} xbox");
+            await SyncUaMarketplacesAsync(tracked, platform: "Switch", query: $"{tracked.Name} nintendo switch");
         }
 
         // TODO: add platform ingestors here (PSN/Xbox/Nintendo/Epic/GOG/etc).
@@ -210,6 +223,57 @@ public sealed class OfferAggregator
                 existing.Currency = "USD";
                 existing.PriceMinor = priceMinor;
                 existing.OriginalPriceMinor = originalMinor;
+                existing.LastSeenUtc = now;
+                existing.LastUpdatedUtc = now;
+            }
+        }
+
+        await _db.SaveChangesAsync();
+    }
+
+    private async Task SyncUaMarketplacesAsync(TrackedGame game, string platform, string query)
+    {
+        if (!_uaScraper.Enabled)
+            return;
+
+        var offers = new List<UaMarketOffer>();
+        offers.AddRange(await _uaScraper.SearchAsync("prom", platform, query));
+        offers.AddRange(await _uaScraper.SearchAsync("olx", platform, query));
+
+        var now = DateTime.UtcNow;
+        foreach (var o in offers)
+        {
+            var externalId = $"{o.Store}:{o.Url}".ToLowerInvariant();
+            var existing = await _db.StoreOffers.FirstOrDefaultAsync(x =>
+                x.Store == o.Store &&
+                x.ExternalId == externalId &&
+                x.Region == "UA");
+
+            if (existing is null)
+            {
+                existing = new StoreOffer
+                {
+                    TrackedGameId = game.Id,
+                    Store = o.Store,
+                    Platform = platform,
+                    Region = "UA",
+                    ExternalId = externalId,
+                    Title = o.Title,
+                    Url = o.Url,
+                    Currency = o.Currency,
+                    PriceMinor = o.PriceMinor,
+                    OriginalPriceMinor = null,
+                    LastSeenUtc = now,
+                    LastUpdatedUtc = now
+                };
+                _db.StoreOffers.Add(existing);
+            }
+            else
+            {
+                existing.Title = o.Title;
+                existing.Url = o.Url;
+                existing.Currency = o.Currency;
+                existing.PriceMinor = o.PriceMinor;
                 existing.LastSeenUtc = now;
                 existing.LastUpdatedUtc = now;
             }
