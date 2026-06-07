@@ -19,13 +19,20 @@ public sealed class RawgClient
     private readonly IMemoryCache _cache;
     private readonly RawgOptions _options;
     private readonly IWebHostEnvironment _env;
+    private readonly SteamStoreClient _steamStore;
 
-    public RawgClient(HttpClient http, IMemoryCache cache, IOptions<RawgOptions> options, IWebHostEnvironment env)
+    public RawgClient(
+        HttpClient http,
+        IMemoryCache cache,
+        IOptions<RawgOptions> options,
+        IWebHostEnvironment env,
+        SteamStoreClient steamStore)
     {
         _http = http;
         _cache = cache;
         _options = options.Value;
         _env = env;
+        _steamStore = steamStore;
     }
 
     public bool IsDemoMode => string.IsNullOrWhiteSpace(_options.ApiKey) && _options.UseDemoDataWhenNoApiKey;
@@ -222,7 +229,7 @@ public sealed class RawgClient
             game.Rating,
             game.RatingsCount,
             null,
-            game.BackgroundImage,
+            await ResolveDemoBackgroundImageAsync(item, game.BackgroundImage),
             null,
             "Demo mode: set Rawg:ApiKey in appsettings.json or via environment variable RAWG__APIKEY to fetch live data.",
             game.Genres,
@@ -246,18 +253,17 @@ public sealed class RawgClient
 
             var json = await File.ReadAllTextAsync(path);
             var payload = JsonSerializer.Deserialize<List<DemoGame>>(json, JsonOptions) ?? [];
-            return payload
-                .Select(g => new GameSummary(
+            var games = await Task.WhenAll(payload.Select(async g => new GameSummary(
                     g.Id,
                     g.Name ?? "(Unknown)",
                     g.Released,
                     g.Rating,
                     g.RatingsCount,
-                    g.BackgroundImage,
+                    await ResolveDemoBackgroundImageAsync(g, g.BackgroundImage),
                     g.Genres ?? [],
                     g.Platforms ?? []
-                ))
-                .ToList();
+                )));
+            return games.ToList();
         }) ?? [];
     }
 
@@ -364,5 +370,40 @@ public sealed class RawgClient
         if (string.IsNullOrWhiteSpace(url))
             return;
         list.Add(new ExternalStoreLink(store, url.Trim()));
+    }
+
+    private async Task<string?> ResolveDemoBackgroundImageAsync(DemoGame? game, string? currentImage)
+    {
+        if (!string.IsNullOrWhiteSpace(currentImage))
+            return currentImage;
+
+        var appId = TryParseSteamAppId(game?.SteamUrl);
+        if (appId is null)
+            return null;
+
+        return await _cache.GetOrCreateAsync($"steam:header:{appId}", async entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(12);
+            var metadata = await _steamStore.GetAppMetadataAsync(appId);
+            return string.IsNullOrWhiteSpace(metadata?.HeaderImage) ? null : metadata.HeaderImage;
+        });
+    }
+
+    private static string? TryParseSteamAppId(string? steamUrl)
+    {
+        if (string.IsNullOrWhiteSpace(steamUrl))
+            return null;
+        if (!Uri.TryCreate(steamUrl, UriKind.Absolute, out var uri))
+            return null;
+
+        var segments = uri.AbsolutePath.Trim('/').Split('/', StringSplitOptions.RemoveEmptyEntries);
+        for (var index = 0; index < segments.Length - 1; index++)
+        {
+            if (!segments[index].Equals("app", StringComparison.OrdinalIgnoreCase))
+                continue;
+            return int.TryParse(segments[index + 1], out _) ? segments[index + 1] : null;
+        }
+
+        return null;
     }
 }

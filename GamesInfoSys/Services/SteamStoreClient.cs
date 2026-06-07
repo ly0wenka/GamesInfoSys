@@ -19,6 +19,21 @@ public sealed class SteamStoreClient
 
     public async Task<SteamPriceResult?> GetAppPriceAsync(string appId, string countryCode)
     {
+        var metadata = await GetAppMetadataAsync(appId, countryCode);
+        if (metadata?.Price is null)
+            return null;
+
+        return new SteamPriceResult(
+            Name: metadata.Name ?? $"Steam app {appId}",
+            Currency: metadata.Price.Currency ?? "",
+            FinalMinor: metadata.Price.Final,
+            InitialMinor: metadata.Price.Initial,
+            DiscountPercent: metadata.Price.DiscountPercent
+        );
+    }
+
+    public async Task<SteamAppMetadata?> GetAppMetadataAsync(string appId, string countryCode = "UA")
+    {
         if (string.IsNullOrWhiteSpace(appId))
             return null;
         if (!int.TryParse(appId, out _))
@@ -32,23 +47,22 @@ public sealed class SteamStoreClient
 
         var json = await res.Content.ReadAsStringAsync();
 
-        // Response is a JSON object keyed by appid.
         var dict = JsonSerializer.Deserialize<Dictionary<string, SteamAppDetailsEnvelope>>(json, JsonOptions);
         if (dict is null || !dict.TryGetValue(appId, out var envelope))
             return null;
         if (!envelope.Success || envelope.Data is null)
             return null;
 
-        var price = envelope.Data.PriceOverview;
-        if (price is null)
-            return null;
-
-        return new SteamPriceResult(
-            Name: envelope.Data.Name ?? $"Steam app {appId}",
-            Currency: price.Currency ?? "",
-            FinalMinor: price.Final,
-            InitialMinor: price.Initial,
-            DiscountPercent: price.DiscountPercent
+        return new SteamAppMetadata(
+            envelope.Data.Name,
+            envelope.Data.HeaderImage,
+            envelope.Data.PriceOverview is null
+                ? null
+                : new SteamPriceSnapshot(
+                    envelope.Data.PriceOverview.Currency ?? "",
+                    envelope.Data.PriceOverview.Final,
+                    envelope.Data.PriceOverview.Initial,
+                    envelope.Data.PriceOverview.DiscountPercent)
         );
     }
 
@@ -61,6 +75,9 @@ public sealed class SteamStoreClient
     private sealed class SteamAppData
     {
         public string? Name { get; set; }
+
+        [JsonPropertyName("header_image")]
+        public string? HeaderImage { get; set; }
 
         [JsonPropertyName("price_overview")]
         public SteamPriceOverview? PriceOverview { get; set; }
@@ -77,6 +94,19 @@ public sealed class SteamStoreClient
     }
 }
 
+public sealed record SteamAppMetadata(
+    string? Name,
+    string? HeaderImage,
+    SteamPriceSnapshot? Price
+);
+
+public sealed record SteamPriceSnapshot(
+    string Currency,
+    long Final,
+    long Initial,
+    int DiscountPercent
+);
+
 public sealed record SteamPriceResult(
     string Name,
     string Currency,
@@ -84,4 +114,3 @@ public sealed record SteamPriceResult(
     long InitialMinor,
     int DiscountPercent
 );
-
