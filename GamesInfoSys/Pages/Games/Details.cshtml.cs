@@ -10,12 +10,14 @@ public sealed class DetailsModel : PageModel
     private readonly RawgClient _rawg;
     private readonly OfferAggregator _offers;
     private readonly CurrencyConverter _fx;
+    private readonly UiText _text;
 
-    public DetailsModel(RawgClient rawg, OfferAggregator offers, CurrencyConverter fx)
+    public DetailsModel(RawgClient rawg, OfferAggregator offers, CurrencyConverter fx, UiText text)
     {
         _rawg = rawg;
         _offers = offers;
         _fx = fx;
+        _text = text;
     }
 
     public bool IsDemoMode => _rawg.IsDemoMode;
@@ -57,7 +59,7 @@ public sealed class DetailsModel : PageModel
         var parsed = TryParseSteamAppId(SteamAppIdOrUrl);
         if (string.IsNullOrWhiteSpace(parsed))
         {
-            ModelState.AddModelError(nameof(SteamAppIdOrUrl), "Paste a Steam app link or an App ID.");
+            ModelState.AddModelError(nameof(SteamAppIdOrUrl), _text["SteamValidation"]);
             Offers = await _offers.GetOffersForRawgGameAsync(id);
             return Page();
         }

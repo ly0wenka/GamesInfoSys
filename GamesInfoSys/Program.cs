@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddLocalization();
 builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<GamesInfoSys.Services.UiText>();
 
 builder.Services.Configure<GamesInfoSys.Services.RawgOptions>(builder.Configuration.GetSection("Rawg"));
 builder.Services.AddHttpClient<GamesInfoSys.Services.RawgClient>((sp, client) =>
@@ -55,6 +59,21 @@ builder.Services.AddScoped<GamesInfoSys.Services.OfferAggregator>();
 
 var app = builder.Build();
 
+var supportedCultures = new[]
+{
+    new CultureInfo("en"),
+    new CultureInfo("uk")
+};
+
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("en"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+};
+
+localizationOptions.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -64,10 +83,30 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRequestLocalization(localizationOptions);
 
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapGet("/set-language", (HttpContext httpContext, string culture, string? returnUrl) =>
+{
+    var normalizedCulture = supportedCultures.Any(x => string.Equals(x.Name, culture, StringComparison.OrdinalIgnoreCase))
+        ? culture
+        : "en";
+
+    httpContext.Response.Cookies.Append(
+        CookieRequestCultureProvider.DefaultCookieName,
+        CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(normalizedCulture)),
+        new CookieOptions
+        {
+            Expires = DateTimeOffset.UtcNow.AddYears(1),
+            IsEssential = true,
+            Path = "/"
+        });
+
+    return Results.LocalRedirect(string.IsNullOrWhiteSpace(returnUrl) ? "/" : returnUrl);
+});
 
 app.MapStaticAssets();
 app.MapRazorPages()

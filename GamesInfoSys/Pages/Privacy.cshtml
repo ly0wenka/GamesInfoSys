@@ -1,14 +1,14 @@
-﻿@page
+@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = Text["PrivacyTitle"];
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>This site does not require accounts and does not intentionally collect personal data.</p>
+<p>@Text["PrivacyLead"]</p>
 
 <ul>
-    <li>When configured with a RAWG API key, the server requests game metadata from RAWG and shows it in the UI.</li>
-    <li>In demo mode (no API key), the site uses a small local dataset.</li>
-    <li>Links to external sites (official game websites, images) may have their own privacy practices.</li>
+    <li>@Text["PrivacyItem1"]</li>
+    <li>@Text["PrivacyItem2"]</li>
+    <li>@Text["PrivacyItem3"]</li>
 </ul>

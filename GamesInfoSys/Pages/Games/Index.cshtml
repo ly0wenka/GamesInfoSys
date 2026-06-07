@@ -1,35 +1,35 @@
 @page "/Games"
 @model GamesInfoSys.Pages.Games.IndexModel
 @{
-    ViewData["Title"] = "Browse";
+    ViewData["Title"] = Text["BrowseTitle"];
 }
 
 <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-3">
     <div>
-        <h1 class="h3 mb-1">Browse games</h1>
+        <h1 class="h3 mb-1">@Text["BrowseHeading"]</h1>
         <div class="text-body-secondary">
             @if (Model.IsDemoMode)
             {
-                <span class="badge text-bg-warning">Demo mode</span>
-                <span class="ms-2">Set <code>Rawg:ApiKey</code> to fetch live data.</span>
+                <span class="badge text-bg-warning">@Text["DemoMode"]</span>
+                <span class="ms-2">@Text["SetRawgApiKey"]</span>
             }
             else
             {
-                <span class="badge text-bg-success">Live</span>
-                <span class="ms-2">Data via RAWG.</span>
+                <span class="badge text-bg-success">@Text["Live"]</span>
+                <span class="ms-2">@Text["DataViaRawg"]</span>
             }
         </div>
     </div>
     <form method="get" class="gis-search w-100 w-md-auto">
         <div class="input-group">
-            <input class="form-control" type="search" name="q" value="@Model.Query" placeholder="Search (e.g. Elden Ring)" />
-            <button class="btn btn-primary" type="submit">Search</button>
+            <input class="form-control" type="search" name="q" value="@Model.Query" placeholder="@Text["SearchPlaceholder"]" />
+            <button class="btn btn-primary" type="submit">@Text["Search"]</button>
         </div>
         <div class="d-flex justify-content-between mt-2">
-            <div class="text-body-secondary small">Tip: leave empty for top games.</div>
+            <div class="text-body-secondary small">@Text["TipTopGames"]</div>
             @if (!string.IsNullOrWhiteSpace(Model.Query))
             {
-                <a class="small" asp-page="/Games/Index">Clear</a>
+                <a class="small" asp-page="/Games/Index">@Text["Clear"]</a>
             }
         </div>
     </form>
@@ -37,7 +37,7 @@
 
 @if (Model.Games.Count == 0)
 {
-    <div class="alert alert-info">No games found.</div>
+    <div class="alert alert-info">@Text["NoGamesFound"]</div>
 }
 else
 {
@@ -48,19 +48,19 @@ else
                 <a class="card h-100 text-decoration-none gis-card" asp-page="/Games/Details" asp-route-id="@g.Id">
                     @if (!string.IsNullOrWhiteSpace(g.BackgroundImage))
                     {
-                        <img class="card-img-top gis-cover" src="@g.BackgroundImage" alt="@g.Name cover" loading="lazy"
+                        <img class="card-img-top gis-cover" src="@g.BackgroundImage" alt="@($"{g.Name} {Text["CoverAlt"]}")" loading="lazy"
                              onerror="this.onerror=null;this.src='/img/cover-placeholder.svg';" />
                     }
                     else
                     {
-                        <img class="card-img-top gis-cover" src="/img/cover-placeholder.svg" alt="@g.Name cover" loading="lazy" />
+                        <img class="card-img-top gis-cover" src="/img/cover-placeholder.svg" alt="@($"{g.Name} {Text["CoverAlt"]}")" loading="lazy" />
                     }
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start gap-2">
                             <h2 class="h6 mb-1 text-body">@g.Name</h2>
                             @if (g.Rating is not null)
                             {
-                                <span class="badge text-bg-secondary">★ @g.Rating</span>
+                                <span class="badge text-bg-secondary">* @g.Rating</span>
                             }
                         </div>
                         <div class="small text-body-secondary">
@@ -70,7 +70,7 @@ else
                             }
                             @if (g.Platforms.Count > 0)
                             {
-                                <span class="ms-2">• @string.Join(", ", g.Platforms.Take(3))</span>
+                                <span class="ms-2">- @string.Join(", ", g.Platforms.Take(3))</span>
                             }
                         </div>
                         @if (g.Genres.Count > 0)
