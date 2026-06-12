@@ -100,6 +100,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRequestLocalization(localizationOptions);
+app.UseStaticFiles();
 
 app.UseRouting();
 
@@ -124,14 +125,12 @@ app.MapGet("/set-language", (HttpContext httpContext, string culture, string? re
     return Results.LocalRedirect(string.IsNullOrWhiteSpace(returnUrl) ? "/" : returnUrl);
 });
 
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapRazorPages();
 
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<GamesInfoSys.Data.AppDbContext>();
-    db.Database.Migrate();
+    await GamesInfoSys.Data.MigrationBootstrapper.InitializeAsync(db);
 }
 
 app.Run();
