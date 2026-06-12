@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Http.Resilience;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,13 @@ builder.Services.AddHttpClient<GamesInfoSys.Services.RawgClient>((sp, client) =>
     var options = sp.GetRequiredService<Microsoft.Extensions.Options.IOptions<GamesInfoSys.Services.RawgOptions>>().Value;
     client.BaseAddress = new Uri(options.BaseUrl);
     client.Timeout = TimeSpan.FromSeconds(15);
+})
+.AddStandardResilienceHandler(options =>
+{
+    options.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(30);
+    options.CircuitBreaker.FailureRatio = 0.2;
+    options.CircuitBreaker.MinimumThroughput = 5;
+    options.CircuitBreaker.BreakDuration = TimeSpan.FromSeconds(20);
 });
 
 builder.Services.Configure<GamesInfoSys.Services.PricingOptions>(builder.Configuration.GetSection("Pricing"));
@@ -32,7 +40,9 @@ builder.Services.AddHttpClient<GamesInfoSys.Services.NbuRatesClient>((sp, client
     var options = sp.GetRequiredService<Microsoft.Extensions.Options.IOptions<GamesInfoSys.Services.CurrencyOptions>>().Value;
     client.BaseAddress = new Uri(options.NbuBaseUrl);
     client.Timeout = TimeSpan.FromSeconds(10);
-});
+})
+.AddStandardResilienceHandler();
+builder.Services.AddScoped<GamesInfoSys.Services.IExchangeRateProvider>(sp => sp.GetRequiredService<GamesInfoSys.Services.NbuRatesClient>());
 builder.Services.AddScoped<GamesInfoSys.Services.CurrencyConverter>();
 
 builder.Services.Configure<GamesInfoSys.Services.ScrapingOptions>(builder.Configuration.GetSection("Scraping"));
@@ -41,20 +51,26 @@ builder.Services.AddHttpClient<GamesInfoSys.Services.UaMarketplaceScraper>(clien
     client.Timeout = TimeSpan.FromSeconds(20);
     client.DefaultRequestHeaders.UserAgent.ParseAdd("GamesInfoSys/1.0 (UA price tracker; scraping MVP)");
     client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("uk-UA,uk;q=0.9,en;q=0.6");
+})
+.AddStandardResilienceHandler(options =>
+{
+    options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(25);
 });
 
 builder.Services.AddHttpClient<GamesInfoSys.Services.SteamStoreClient>(client =>
 {
     client.BaseAddress = new Uri("https://store.steampowered.com/");
     client.Timeout = TimeSpan.FromSeconds(15);
-});
+})
+.AddStandardResilienceHandler();
 builder.Services.AddHttpClient<GamesInfoSys.Services.CheapSharkClient>(client =>
 {
     client.BaseAddress = new Uri("https://www.cheapshark.com/");
     client.Timeout = TimeSpan.FromSeconds(15);
     // CheapShark requires a descriptive User-Agent to avoid accidental blocking.
     client.DefaultRequestHeaders.UserAgent.ParseAdd("GamesInfoSys/1.0 (no-key; marketplace redirects)");
-});
+})
+.AddStandardResilienceHandler();
 builder.Services.AddScoped<GamesInfoSys.Services.OfferAggregator>();
 
 var app = builder.Build();
@@ -115,7 +131,7 @@ app.MapRazorPages()
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<GamesInfoSys.Data.AppDbContext>();
-    db.Database.EnsureCreated();
+    db.Database.Migrate();
 }
 
 app.Run();

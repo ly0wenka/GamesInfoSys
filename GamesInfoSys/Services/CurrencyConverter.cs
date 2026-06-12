@@ -2,11 +2,11 @@ namespace GamesInfoSys.Services;
 
 public sealed class CurrencyConverter
 {
-    private readonly NbuRatesClient _nbu;
+    private readonly IExchangeRateProvider _rates;
 
-    public CurrencyConverter(NbuRatesClient nbu)
+    public CurrencyConverter(IExchangeRateProvider rates)
     {
-        _nbu = nbu;
+        _rates = rates;
     }
 
     public async Task<decimal?> ToUahAsync(decimal amount, string fromCurrency)
@@ -20,11 +20,10 @@ public sealed class CurrencyConverter
         if (fromCurrency == "UAH")
             return amount;
 
-        var rates = await _nbu.GetRatesToUahAsync();
+        var rates = await _rates.GetRatesToUahAsync();
         if (!rates.TryGetValue(fromCurrency, out var rateToUah) || rateToUah <= 0)
             return null;
 
         return amount * rateToUah;
     }
 }
-

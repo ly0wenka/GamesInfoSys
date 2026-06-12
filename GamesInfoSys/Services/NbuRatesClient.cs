@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace GamesInfoSys.Services;
 
-public sealed class NbuRatesClient
+public sealed class NbuRatesClient : IExchangeRateProvider
 {
     private static readonly JsonSerializerOptions JsonOptions = new()
     {

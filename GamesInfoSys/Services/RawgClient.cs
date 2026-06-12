@@ -377,7 +377,7 @@ public sealed class RawgClient
         if (!string.IsNullOrWhiteSpace(currentImage))
             return currentImage;
 
-        var appId = TryParseSteamAppId(game?.SteamUrl);
+        var appId = SteamAppIdParser.TryParse(game?.SteamUrl);
         if (appId is null)
             return null;
 
@@ -387,23 +387,5 @@ public sealed class RawgClient
             var metadata = await _steamStore.GetAppMetadataAsync(appId);
             return string.IsNullOrWhiteSpace(metadata?.HeaderImage) ? null : metadata.HeaderImage;
         });
-    }
-
-    private static string? TryParseSteamAppId(string? steamUrl)
-    {
-        if (string.IsNullOrWhiteSpace(steamUrl))
-            return null;
-        if (!Uri.TryCreate(steamUrl, UriKind.Absolute, out var uri))
-            return null;
-
-        var segments = uri.AbsolutePath.Trim('/').Split('/', StringSplitOptions.RemoveEmptyEntries);
-        for (var index = 0; index < segments.Length - 1; index++)
-        {
-            if (!segments[index].Equals("app", StringComparison.OrdinalIgnoreCase))
-                continue;
-            return int.TryParse(segments[index + 1], out _) ? segments[index + 1] : null;
-        }
-
-        return null;
     }
 }
