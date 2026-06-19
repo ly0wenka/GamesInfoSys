@@ -60,10 +60,12 @@
         "released":  "2022-02-25",
         "rating":  4.39,
         "ratingsCount":  12000,
+        "description":  "Elden Ring is an open-world action RPG by FromSoftware set in the Lands Between. You explore a large dark-fantasy world, fight challenging bosses, develop your build through weapons, magic and attributes, and uncover the shattered history of the Elden Ring on the way to becoming Elden Lord.",
+        "descriptionUk":  "Elden Ring — це рольова екшен-гра з відкритим світом від FromSoftware, дія якої відбувається у Межизем'ї. Гравець досліджує великий темний фентезійний світ, перемагає складних босів, розвиває свій стиль гри через зброю, магію та характеристики, а також розкриває історію зруйнованого Elden Ring на шляху до титулу Elden Lord.",
         "backgroundImage":  "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg",
         "genres":  [
-                       "Action",
-                       "RPG"
+            "Action",
+            "RPG"
                    ],
         "platforms":  [
                           "PC",

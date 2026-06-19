@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
+using System.Globalization;
 using GamesInfoSys.Models;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
@@ -158,6 +159,10 @@ public sealed class RawgClient
 
     private static GameDetails MapDetails(RawgGameDetails raw)
     {
+        var description = LocalizeDescription(
+            StripHtmlToPlainText(raw.Description),
+            null);
+
         return new GameDetails(
             raw.Id,
             raw.Name ?? "(Unknown)",
@@ -167,7 +172,7 @@ public sealed class RawgClient
             raw.Metacritic,
             raw.BackgroundImage,
             raw.Website,
-            StripHtmlToPlainText(raw.Description),
+            description,
             (raw.Genres ?? []).Select(g => g.Name).Where(n => !string.IsNullOrWhiteSpace(n)).ToList(),
             (raw.Platforms ?? []).Select(p => p.Platform?.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Cast<string>().Distinct().ToList(),
             (raw.Developers ?? []).Select(d => d.Name).Where(n => !string.IsNullOrWhiteSpace(n)).Distinct().ToList(),
@@ -231,7 +236,7 @@ public sealed class RawgClient
             null,
             await ResolveDemoBackgroundImageAsync(item, game.BackgroundImage),
             null,
-            "Demo mode: set Rawg:ApiKey in appsettings.json or via environment variable RAWG__APIKEY to fetch live data.",
+            GetDemoDescription(item),
             game.Genres,
             game.Platforms,
             [],
@@ -353,6 +358,8 @@ public sealed class RawgClient
         public string? Released { get; set; }
         public double? Rating { get; set; }
         public int? RatingsCount { get; set; }
+        public string? Description { get; set; }
+        public string? DescriptionUk { get; set; }
         public string? BackgroundImage { get; set; }
         public List<string>? Genres { get; set; }
         public List<string>? Platforms { get; set; }
@@ -370,6 +377,93 @@ public sealed class RawgClient
         if (string.IsNullOrWhiteSpace(url))
             return;
         list.Add(new ExternalStoreLink(store, url.Trim()));
+    }
+
+    private static string GetDemoDescription(DemoGame? game)
+    {
+        return LocalizeDescription(game?.Description, game?.DescriptionUk)
+            ?? "Demo mode: set Rawg:ApiKey in appsettings.json or via environment variable RAWG__APIKEY to fetch live data.";
+    }
+
+    private static string? LocalizeDescription(string? description, string? descriptionUk)
+    {
+        var isUkrainian = string.Equals(
+            CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+            "uk",
+            StringComparison.OrdinalIgnoreCase);
+
+        if (isUkrainian)
+        {
+            if (!string.IsNullOrWhiteSpace(descriptionUk))
+                return descriptionUk;
+
+            if (!string.IsNullOrWhiteSpace(description))
+                return AutoTranslateDescriptionToUkrainian(description);
+        }
+
+        return string.IsNullOrWhiteSpace(description) ? null : description;
+    }
+
+    private static string AutoTranslateDescriptionToUkrainian(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return text;
+
+        var translated = text.Trim();
+
+        translated = Regex.Replace(translated, @"\b[Ee]xplore\b", "Досліджуйте");
+        translated = Regex.Replace(translated, @"\b[Yy]ou explore\b", "Гравець досліджує");
+        translated = Regex.Replace(translated, @"\b[Yy]ou fight\b", "Гравець бореться");
+        translated = Regex.Replace(translated, @"\b[Yy]ou play as\b", "Гравець керує");
+        translated = Regex.Replace(translated, @"\b[Yy]ou control\b", "Гравець керує");
+        translated = Regex.Replace(translated, @"\b[Yy]ou build\b", "Гравець розбудовує");
+        translated = Regex.Replace(translated, @"\b[Yy]ou can\b", "Можна");
+
+        var replacements = new (string Source, string Target)[]
+        {
+            (" is an open-world action RPG", " — це рольова екшен-гра з відкритим світом"),
+            (" is an open world action RPG", " — це рольова екшен-гра з відкритим світом"),
+            (" is an action RPG", " — це рольова екшен-гра"),
+            (" is an open-world RPG", " — це рольова гра з відкритим світом"),
+            (" is an RPG", " — це рольова гра"),
+            (" is an open-world action game", " — це екшен-гра з відкритим світом"),
+            (" is an action-adventure game", " — це пригодницька екшен-гра"),
+            (" is an action game", " — це екшен-гра"),
+            (" is a dark-fantasy action RPG", " — це рольова екшен-гра у жанрі темного фентезі"),
+            (" by FromSoftware", " від FromSoftware"),
+            (" set in ", ", події якої відбуваються у "),
+            (" set on ", ", події якої відбуваються на "),
+            (" set across ", ", події якої розгортаються у "),
+            (" fight challenging bosses", " перемагає складних босів"),
+            (" battle challenging bosses", " б'ється зі складними босами"),
+            (" develop your build", " розвиває свій стиль гри"),
+            (" through weapons, magic and attributes", " через зброю, магію та характеристики"),
+            (" through weapons, magic, and attributes", " через зброю, магію та характеристики"),
+            (" uncover the shattered history", " розкриває зруйновану історію"),
+            (" on the way to becoming ", " на шляху до того, щоб стати "),
+            (" large dark-fantasy world", " великий світ темного фентезі"),
+            (" dark-fantasy world", " світ темного фентезі"),
+            (" open-world", "з відкритим світом"),
+            (" open world", " відкритий світ"),
+            (" action RPG", " рольова екшен-гра"),
+            (" action-adventure", " пригодницький екшен"),
+            (" bosses", " босів"),
+            (" boss", " боса"),
+            (" weapons", " зброю"),
+            (" weapon", " зброю"),
+            (" magic", " магію"),
+            (" attributes", " характеристики"),
+            (" story", " історію"),
+            (" world", " світ"),
+            (" journey", " подорож"),
+            (" kingdom", " королівство")
+        };
+
+        foreach (var (source, target) in replacements)
+            translated = translated.Replace(source, target, StringComparison.OrdinalIgnoreCase);
+
+        translated = Regex.Replace(translated, @"\s+", " ").Trim();
+        return translated;
     }
 
     private async Task<string?> ResolveDemoBackgroundImageAsync(DemoGame? game, string? currentImage)
